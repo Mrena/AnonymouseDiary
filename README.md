@@ -1,0 +1,4 @@
+AnonymouseDiary
+===============
+
+The app will let it users pour their heart out and speak their minds about situations and things which are happening inn their lives in a form of articles and/or post, and other users can comment, vote for the best article or post of the week, and dislike those that they feel are not appropriate for others users of the app. All users of the app will be a using a username of "Anonymous". The app will include added value services which include but not limited to private chat requests with other users of the app, reviling some part of person identifying information like location, ect. Users will be charge using airtime from their phones, and that will not be limited to charging through South African mobile networks. The app will be completely real-time, as in broadcasting changes done by one user to others users without reloading a page or pressing a button for updates.
