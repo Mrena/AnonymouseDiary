@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <link rel="stylesheet" href="static/css/jquery.mobile-1.3.2.css" />
+    <link rel="stylesheet" href="static/css/mainstyle.css" />
+    <script type="text/javascript" src="static/js/jquery-1.10.2.js"></script>
+    <script type="text/javascript" src="static/js/jquery.mobile-1.3.2.js"></script>
+</head>
+<body>
+    <div data-role="page">
+            <div data-role="header">
+                 <ul data-role="listview" style="list-style:none;">
+                    <li><img src="static/images/diary.png" alt="logo" />
+                        <h3><span class="app_name"></span></h3>
+                        <p>Express, anonymously.</p>
+                    </li>
+                 </ul>
+            </div>
+            <div data-role="content">
+                <ul data-role="listview" data-inset="true" data-theme="b">
+        		<li><h3>Startup</h3></li>
+        	</ul>
+        	<br />
+                <div class="ui-grid-a">
+                     <div class="ui-block-a"><span id="messages_created"></span></div>
+                    <div class="ui-block-b">
+                        <div class="ui-grid-b">
+                            <div class="ui-block-a"><a href="#" data-role="button" id="create_messages_table">Create Messages</a></div>
+                            <div class="ui-block-b"><a href="#" data-role="button" id="delete_messages_table">Delete Messages Table</a></div>
+                            <div class="ui-block-c"><a href="#" data-role="button" id="empty_messages_table">Empty Messages Table</a></div>
+                        </div>
+                    </div>
+                     <div class="ui-block-a"></div><div class="ui-block-b"></div>
+                     <div class="ui-block-a"></div><div class="ui-block-b"></div>
+                     <div class="ui-block-a"></div><div class="ui-block-b"></div>
+                </div>
+            </div>
+            <div data-role="footer">
+
+             </div>
+        </div>
+</body>
+</html>
