@@ -10,9 +10,7 @@ var Login = function(client,mysql_con,fs,userDetails){
 	    	
 	    	console.trace(error);
 	    	client.emit("login_error");
-	    	var file_name = "authenticator_da.js",
-			line_number = 10;
-			startup_da_parent.logDatabaseSystemError(client,error,file_name,line_number);
+	    	
 	    	
 	    },function(client,rows,fields){
 	    	
@@ -36,9 +34,7 @@ var Login = function(client,mysql_con,fs,userDetails){
 	}catch(error){
 		// System error logging
 		console.log(error);
-		var file_name = "authenticator_da.js",
-		line_number = 5;
-		startup_da_parent.logSystemError(client,error,file_name,line_number);
+	
 	}
 	    
 };

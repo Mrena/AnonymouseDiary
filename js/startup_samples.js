@@ -11,16 +11,11 @@ var startup_samples = function(client,mysql_con,fs){
 			
 		}catch(error){
 			console.log(error);
-			var file_name = "startup_samples.js",
-			line_number = 10;
-			startup_da_samples.logSystemError(client,error,file_name,line_number);
+			
 		}
 		
 		
-	});
-	
-	
-	client.on("add_sample_packages",function(){
+	}).on("add_sample_packages",function(){
 		
 		try{
 			
@@ -28,14 +23,10 @@ var startup_samples = function(client,mysql_con,fs){
 			
 		}catch(error){
 			console.log(error);
-			var file_name = "startup_samples.js",
-			line_number = 28;
-			startup_da_samples.logSystemError(client,error,file_name,line_number);
+			
 		}
 		
-	});
-	
-	client.on("add_sample_orders",function(){
+	}).on("add_sample_orders",function(){
 		
 		try{
 			
@@ -44,14 +35,9 @@ var startup_samples = function(client,mysql_con,fs){
 			
 		}catch(error){
 			console.log(error);
-			var file_name = "startup_samples.js",
-			line_number = 44;
-			startup_da_samples.logSystemError(client,error,file_name,line_number);
 		}
 		
-	});
-	
-	client.on("add_sample_areas",function(){
+	}).on("add_sample_areas",function(){
 		
 		try{
 			
@@ -60,14 +46,9 @@ var startup_samples = function(client,mysql_con,fs){
 			
 		}catch(error){
 			console.log(error);
-			var file_name = "startup_samples.js",
-			line_number = 60;
-			startup_da_samples.logSystemError(client,error,file_name,line_number);
 		}
 		
-	});
-	
-	client.on("add_sample_cities",function(){
+	}).on("add_sample_cities",function(){
 		
 		try{
 			
@@ -76,14 +57,9 @@ var startup_samples = function(client,mysql_con,fs){
 			
 		}catch(error){
 			console.log(error);
-			var file_name = "startup_samples.js",
-			line_number = 76;
-			startup_da_samples.logSystemError(client,error,file_name,line_number);
 		}
 		
-	});
-	
-	client.on("add_sample_userIDs",function(){
+	}).on("add_sample_userIDs",function(){
 		
 		try{
 			
@@ -92,14 +68,9 @@ var startup_samples = function(client,mysql_con,fs){
 			
 		}catch(error){
 			console.log(error);
-			var file_name = "startup_samples.js",
-			line_number = 92;
-			startup_da_samples.logSystemError(client,error,file_name,line_number);
 		}
 		
-	});
-	
-	client.on("add_sample_users",function(){
+	}).on("add_sample_users",function(){
 		
 		try{
 			
@@ -108,14 +79,9 @@ var startup_samples = function(client,mysql_con,fs){
 			
 		}catch(error){
 			console.log(error);
-			var file_name = "startup_samples.js",
-			line_number = 108;
-			startup_da_samples.logSystemError(client,error,file_name,line_number);
 		}
 		
-	});
-	
-	client.on("add_sample_admin",function(){
+	}).on("add_sample_admin",function(){
 		
 		try{
 			
@@ -124,14 +90,9 @@ var startup_samples = function(client,mysql_con,fs){
 			
 		}catch(error){
 			console.log(error);
-			var file_name = "startup_samples.js",
-			line_number = 124;
-			startup_da_samples.logSystemError(client,error,file_name,line_number);
 		}
 		
-	});
-	
-	client.on("add_sample_admin_rights",function(){
+	}).on("add_sample_admin_rights",function(){
 		
 		
 		try{
@@ -141,14 +102,9 @@ var startup_samples = function(client,mysql_con,fs){
 			
 		}catch(error){
 			console.log(error);
-			var file_name = "startup_samples.js",
-			line_number = 141;
-			startup_da_samples.logSystemError(client,error,file_name,line_number);
 		}
 		
-	});
-	
-	client.on("add_sample_alerts",function(){
+	}).on("add_sample_alerts",function(){
 		
 		try{
 			
@@ -157,14 +113,9 @@ var startup_samples = function(client,mysql_con,fs){
 			
 		}catch(error){
 			console.log(error);
-			var file_name = "startup_samples.js",
-			line_number = 157;
-			startup_da_samples.logSystemError(client,error,file_name,line_number);
 		}
 		
-	});
-	
-	client.on("create_database",function(database_name){
+	}).on("create_database",function(database_name){
 		  
 	try{
 		
@@ -172,14 +123,9 @@ var startup_samples = function(client,mysql_con,fs){
 		  
 	}catch(error){
 		console.log(error);
-		var file_name = "startup_samples.js",
-		line_number = 173;
-		startup_da_samples.logSystemError(client,error,file_name,line_number);
 	}
 		  
- });
-	
- client.on("add_sample_data",function(){
+ }).on("add_sample_data",function(){
 		 
 	 try{
 		 
@@ -187,14 +133,9 @@ var startup_samples = function(client,mysql_con,fs){
 		 
  	}catch(error){
 		console.log(error);
-		var file_name = "startup_samples.js",
-		line_number = 188;
-		startup_da_samples.logSystemError(client,error,file_name,line_number);
 	}
 		 
- });
- 
- client.on("add_sample_delivery_method",function(){
+ }).on("add_sample_delivery_method",function(){
 	 
 	 try{
 		 
@@ -202,14 +143,9 @@ var startup_samples = function(client,mysql_con,fs){
 		 
  	}catch(error){
 		console.log(error);
-		var file_name = "startup_samples.js",
-		line_number = 201;
-		startup_da_samples.logSystemError(client,error,file_name,line_number);
 	}
 		 
- });
- 
- client.on("add_sample_messages",function(){
+ }).on("add_sample_messages",function(){
 	 
 	 try{
 		 
@@ -218,14 +154,9 @@ var startup_samples = function(client,mysql_con,fs){
  	}catch(error){
  		
 		console.log(error);
-		var file_name = "startup_samples.js",
-		line_number = 201;
-		startup_da_samples.logSystemError(client,error,file_name,line_number);
 	}
 		 
- });
- 
- client.on("add_sample_reply_messages",function(){
+ }).on("add_sample_reply_messages",function(){
 	 
 	 try{
 		 
@@ -234,14 +165,9 @@ var startup_samples = function(client,mysql_con,fs){
  	}catch(error){
  		
 		console.log(error);
-		var file_name = "startup_samples.js",
-		line_number = 201;
-		startup_da_samples.logSystemError(client,error,file_name,line_number);
 	}
 		 
- });
- 
-client.on("add_sample_message_attachments",function(){
+ }).on("add_sample_message_attachments",function(){
 	 
 	 try{
 		 
@@ -249,9 +175,6 @@ client.on("add_sample_message_attachments",function(){
 		 
  	}catch(error){
 		console.log(error);
-		var file_name = "startup_samples.js",
-		line_number = 201;
-		startup_da_samples.logSystemError(client,error,file_name,line_number);
 	}
 		 
  });

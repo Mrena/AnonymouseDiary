@@ -26,7 +26,6 @@
  
         }
 
-        console.log("Message",message);
 
         if (validateMessage(message)) {
 

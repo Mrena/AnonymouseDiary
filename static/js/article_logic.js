@@ -66,11 +66,6 @@
     });
 
 
-
-
-
-
-
     $clear_article.on("vclick", function (e) {
 
 

@@ -6,10 +6,7 @@
 			query = "INSERT INTO Catcha_Images(catcha_name,catcha_value,catcha_image) VALUES('"+objCatcha.catcha_name+"','"+objCatcha.catcha_value+"','"+objCatcha.image_data+"')";
 			startup_da_parent.runQuery(query,mysql_con,client,function(client,error){
 				
-				console.trace(error);
-				var file_name = "catcha_server_da.js",
-				line_number = 7;
-				startup_da_parent.logDatabaseSystemError(client,error,file_name,line_number);
+				console.log(error);
 				client.emit("add_catcha_image_error");
 				
 			},function(client){
@@ -27,11 +24,8 @@
 		startup_da_parent.runSelectQuery(query,client,mysql_con,function(client,error){
 			
 			client.emit("get_all_catcha_images_error");
+			console.log(error);
 			
-			console.trace(error);
-			var file_name = "catcha_server_da.js",
-			line_number = 148;
-			startup_da_parent.logDatabaseSystemError(client,error,file_name,line_number);
 			
 			
 		},function(client,rows,fields){
@@ -48,11 +42,8 @@
 		}catch(error){
 			
 			client.emit("get_all_catcha_images_error");
-			// System error logging
 			console.log(error);
-			var file_name = "catcha_server_da.js",
-			line_number = 213;
-			startup_da_parent.logSystemError(client,error,file_name,line_number);
+			
 			
 		}
 		
@@ -66,10 +57,8 @@
 			    startup_da_parent.runQuery(query,mysql_con,client,function(client,error){
 			    	
 			    		client.emit("delete_catcha_image_error");
-			    		console.trace(error);
-			    		var file_name = "catcha_server_da.js",
-			    		line_number = 69;
-			    		startup_da_parent.logDatabaseSystemError(client,error,file_name,line_number);
+			    		console.log(error);
+			    	
 			    	
 			    		},function(client){
 			    			
@@ -80,11 +69,8 @@
 			}catch(error){
 				
 				client.emit("delete_catcha_image_error");
-				// System error logging
 				console.log(error);
-				var file_name = "catcha_server_da.js",
-				line_number = 78;
-				startup_da_parent.logSystemError(client,error,file_name,line_number);
+				
 		} 
 			       
 	};
@@ -97,10 +83,8 @@
 			    startup_da_parent.runQuery(query,mysql_con,client,function(client,error){
 			    	
 			    		client.emit("update_catcha_info_error");
-			    		console.trace(error);
-			    		var file_name = "catcha_server_da.js",
-			    		line_number = 69;
-			    		startup_da_parent.logDatabaseSystemError(client,error,file_name,line_number);
+			    		console.log(error);
+			    	
 			    	
 			    		},function(client){
 			    			getAllCatchaImages(client,mysql_con,fs);
@@ -109,11 +93,8 @@
 			}catch(error){
 				
 				client.emit("update_catcha_info_error");
-				// System error logging
 				console.log(error);
-				var file_name = "catcha_server_da.js",
-				line_number = 78;
-				startup_da_parent.logSystemError(client,error,file_name,line_number);
+				
 		} 
 			    	    
 	};
@@ -127,10 +108,7 @@
 			query = "INSERT INTO Catcha_Images(catcha_name,catcha_value,catcha_image) VALUES('"+objCatcha.catcha_name+"','"+objCatcha.catcha_value+"','"+objCatcha.image_data+"')";
 			startup_da_parent.runQuery(query,mysql_con,client,function(client,error){
 				
-				console.trace(error);
-				var file_name = "catcha_server_da.js",
-				line_number = 7;
-				startup_da_parent.logDatabaseSystemError(client,error,file_name,line_number);
+				console.log(error);
 				client.emit("add_catcha_image_error");
 				return;
 				
@@ -152,10 +130,7 @@ var deleteAllCatchaImages = function(client,mysql_con,fs){
 		query = "TRUNCATE Catcha_Images";
 		startup_da_parent.runQuery(query,mysql_con,client,function(client,error){
 			
-			console.trace(error);
-			var file_name = "catcha_server_da.js",
-			line_number = 7;
-			startup_da_parent.logDatabaseSystemError(client,error,file_name,line_number);
+			console.log(error);
 			client.emit("delete_all_catcha_images_error");
 			
 		},function(client){
@@ -172,11 +147,8 @@ var generateNewCatcha = function(client,mysql_con,fs){
 	startup_da_parent.runSelectQuery(query,client,mysql_con,function(client,error){
 		
 		client.emit("new_catcha_error");
+		console.log(error);
 		
-		console.trace(error);
-		var file_name = "catcha_server_da.js",
-		line_number = 148;
-		startup_da_parent.logDatabaseSystemError(client,error,file_name,line_number);
 		
 		
 	},function(client,rows,fields){
@@ -192,9 +164,6 @@ var generateNewCatcha = function(client,mysql_con,fs){
     		
     		client.emit("new_catcha_error");
     		console.trace(error);
-    		var file_name = "catcha_server_da.js",
-    		line_number = 148;
-    		startup_da_parent.logDatabaseSystemError(client,error,file_name,line_number);
     		
     		
     	},function(client,rows,fields){
