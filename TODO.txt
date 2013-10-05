@@ -1,0 +1,1 @@
+Since this is a tiny app, we are just going to work with TODO list, no methodologies.

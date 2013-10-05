@@ -23,22 +23,20 @@ var chat = function (client, mysql_con, fs) {
     client.on("chat_message",function(chat_message){
 		
         if (validateMessage(chat_message)) {
-
-			console.log("about to emit chat message");
+            
             var objChatMessage = {
                 "from": "Anonymous",
                 "message" : chat_message
             };
 			
-             console.log(client);
+
             client.broadcast.emit("chat_message", JSON.stringify(objChatMessage));
             
             //chat_da.storeChatMessage(client,mysql_con,fs,objChatMessage);
 	
         }
-	});
-	
-    client.on("send_image", function (objImageData) {
+       
+    }).on("send_image", function (objImageData) {
 
 
         objImageData = JSON.parse(objImageData);
@@ -51,8 +49,7 @@ var chat = function (client, mysql_con, fs) {
             "from": "Anonymous",
             "imageData" : objImageData
         };
-			
-        console.log(objChatImage);
+		
         client.broadcast.emit("chat_image",JSON.stringify(objChatImage));
         //chat_da.storeChatImage(client,mysql_con,fs,objChatMessage);
        }

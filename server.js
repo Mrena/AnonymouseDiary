@@ -5,6 +5,7 @@
 	var ip_address  = process.env.OPENSHIFT_NODEJS_IP || "127.0.0.1";
 	var port    = process.env.OPENSHIFT_NODEJS_PORT || 8000;
 
+   // Including the Node.js modules we need, and creating a http & web socket server 
 	var express = require("express");
 	var expressApp = express();
 	var app = require("http").createServer(expressApp);
@@ -12,7 +13,8 @@
 	var fs = require("fs");
 	var url = require("url");
 	var mysql = require("mysql");
-				
+			
+// Connecting to MySQl and selecting a database
 	var mysql_con = mysql.createConnection({
 		host : "localhost",
 		user : "root",
@@ -36,6 +38,7 @@
 	
 	});
 	
+  // Routing http requests
 	expressApp.get("/index",function(request,response){
 		handler(request,response);
 	});
@@ -136,6 +139,7 @@ function pageNotFound(request,response){
 	
 }
 
+// Listening to socket connection
    io.sockets.on("connection",function(client){
 		
 		

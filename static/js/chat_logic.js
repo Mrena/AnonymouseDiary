@@ -19,6 +19,14 @@
     $send_message.on("vclick", function (e) {
 
         var message = $message.val();
+   
+        for (var i = 0; i < message.length; i++) {
+          
+            message = message.replace("<", "&lt;").replace(">", "&gt;");
+ 
+        }
+
+        console.log("Message",message);
 
         if (validateMessage(message)) {
 
@@ -54,7 +62,7 @@
 
     socket.on("chat_message", function (objMessage) {
 
-         console.log("Chat message recieved.");
+ 
          objMessage = JSON.parse(objMessage);
         if(validateMessage(objMessage.message)){
         

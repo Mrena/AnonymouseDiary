@@ -14,10 +14,7 @@ var startup_tables = function(client,mysql_con,fs){
 		
 		}
 		
-	});
-
-
-	client.on("delete_messages_table",function(){
+	}).on("delete_messages_table",function(){
 		
 	try{
 			
@@ -27,9 +24,7 @@ var startup_tables = function(client,mysql_con,fs){
 			console.log(error);
 		}
 		
-	});
-	
-	client.on("empty_messages_table",function(){
+	}).on("empty_messages_table",function(){
 		
 		
 	try{
@@ -56,10 +51,7 @@ var startup_tables = function(client,mysql_con,fs){
 
 	    }
 
-	});
-
-
-	client.on("delete_category_table", function () {
+	}).on("delete_category_table", function () {
 
 	    try {
 
@@ -69,9 +61,7 @@ var startup_tables = function(client,mysql_con,fs){
 	        console.log(error);
 	    }
 
-	});
-
-	client.on("empty_category_table", function () {
+	}).on("empty_category_table", function () {
 
 
 	    try {
@@ -98,10 +88,7 @@ var startup_tables = function(client,mysql_con,fs){
 
 	    }
 
-	});
-
-
-	client.on("delete_article_table", function () {
+	}).on("delete_article_table", function () {
 
 	    try {
 
@@ -111,9 +98,7 @@ var startup_tables = function(client,mysql_con,fs){
 	        console.log(error);
 	    }
 
-	});
-
-	client.on("empty_article_table", function () {
+	}).on("empty_article_table", function () {
 
 
 	    try {
@@ -141,10 +126,7 @@ var startup_tables = function(client,mysql_con,fs){
 
 	    }
 
-	});
-
-
-	client.on("delete_reply_messages_table", function () {
+	}).on("delete_reply_messages_table", function () {
 
 	    try {
 
@@ -154,9 +136,7 @@ var startup_tables = function(client,mysql_con,fs){
 	        console.log(error);
 	    }
 
-	});
-
-	client.on("empty_messages_table", function () {
+	}).on("empty_messages_table", function () {
 
 
 	    try {
@@ -183,10 +163,7 @@ var startup_tables = function(client,mysql_con,fs){
 
 	    }
 
-	});
-
-
-	client.on("delete_message_attachments_table", function () {
+	}).on("delete_message_attachments_table", function () {
 
 	    try {
 
@@ -196,9 +173,7 @@ var startup_tables = function(client,mysql_con,fs){
 	        console.log(error);
 	    }
 
-	});
-
-	client.on("empty_messages_table", function () {
+	}).on("empty_messages_table", function () {
 
 
 	    try {
@@ -210,11 +185,7 @@ var startup_tables = function(client,mysql_con,fs){
 
 	    }
 
-	});
-
-	
-	
-	 client.on("create_tables",function(){
+	}).on("create_tables",function(){
 		 
     try{
 		 
