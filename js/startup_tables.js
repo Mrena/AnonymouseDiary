@@ -195,7 +195,57 @@ var startup_tables = function(client,mysql_con,fs){
 			console.log(error);
 		}
 		 
-	 }); 
+	}).on("delete_tables",function(){
+		 
+	    try{
+		 
+	        startup_da_tables.deleteTables(client,mysql_con,fs);
+		 
+	    }catch(error){
+	        console.log(error);
+	    }
+		 
+	}).on("empty_tables", function () {
+
+	    try {
+
+	        startup_da_tables.emptyTables(client, mysql_con, fs);
+
+	    } catch (error) {
+	        console.log(error);
+	    }
+
+	}).on("create_tables_table", function () {
+
+	    try {
+	        console.log("about to create tables table");
+	        startup_da_tables.createTablesTable(client, mysql_con, fs);
+
+	    } catch (error) {
+	        console.log(error);
+	    }
+
+	}).on("delete_tables_table", function () {
+
+	    try {
+
+	        startup_da_tables.deleteTablesTable(client, mysql_con, fs);
+
+	    } catch (error) {
+	        console.log(error);
+	    }
+
+	}).on("get_tables_status", function () {
+	    
+	    try {
+
+	        startup_da_tables.getTablesStatus(client, mysql_con, fs);
+
+	    } catch (error) {
+	        console.log(error);
+	    }
+
+	});
 	 
 };
 

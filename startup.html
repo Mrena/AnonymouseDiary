@@ -1,45 +1,69 @@
-﻿<!DOCTYPE html>
-<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
-<head>
-    <meta charset="utf-8" />
-    <title></title>
+<!DOCTYPE html>
+<html>
+    <head><title>Startup</title>
     <link rel="stylesheet" href="static/css/jquery.mobile-1.3.2.css" />
     <link rel="stylesheet" href="static/css/mainstyle.css" />
     <script type="text/javascript" src="static/js/jquery-1.10.2.js"></script>
     <script type="text/javascript" src="static/js/jquery.mobile-1.3.2.js"></script>
-</head>
-<body>
-    <div data-role="page">
+    </head>
+    <body>
+        <div data-role="page" id="index">
             <div data-role="header">
-                 <ul data-role="listview" style="list-style:none;">
-                    <li><img src="static/images/diary.png" alt="logo" />
-                        <h3><span class="app_name"></span></h3>
-                        <p>Express, anonymously.</p>
-                    </li>
-                 </ul>
+                <ul data-role="listview" style="list-style:none;">
+                          <li><img src="static/images/diary.png" alt="logo" />
+                              <h3><span class="app_name"></span></h3>
+                              <p>Express, anonymously.</p>
+                          </li>
+                      </ul>
             </div>
-            <div data-role="content">
-                <ul data-role="listview" data-inset="true" data-theme="b">
-        		<li><h3>Startup</h3></li>
-        	</ul>
-        	<br />
-                <div class="ui-grid-a">
-                     <div class="ui-block-a"><span id="messages_created"></span></div>
-                    <div class="ui-block-b">
-                        <div class="ui-grid-b">
-                            <div class="ui-block-a"><a href="#" data-role="button" id="create_messages_table">Create Messages</a></div>
-                            <div class="ui-block-b"><a href="#" data-role="button" id="delete_messages_table">Delete Messages Table</a></div>
-                            <div class="ui-block-c"><a href="#" data-role="button" id="empty_messages_table">Empty Messages Table</a></div>
-                        </div>
-                    </div>
-                     <div class="ui-block-a"></div><div class="ui-block-b"></div>
-                     <div class="ui-block-a"></div><div class="ui-block-b"></div>
-                     <div class="ui-block-a"></div><div class="ui-block-b"></div>
+                <div data-role="content">
+                    <ul data-role="listview">
+                        <li>
+                            <h3>Messages Table</h3>
+                            <p>status: <span id="messages_status"></span></p>
+                            <p>samples status: <span id="messages_empty_status"></span></p>
+                        </li>
+                        <li>
+                            <h3>Category Table</h3>
+                            <p>status: <span id="category_status"></span></p>
+                            <p>samples status: <span id="category_empty_status"></span></p>
+                        </li>
+                         <li>
+                            <h3>Article Table</h3>
+                            <p>status: <span id="article_status"></span></p>
+                            <p>samples status: <span id="article_empty_status"></span></p>
+                        </li>
+                         <li>
+                            <h3>Reply_Messages Table</h3>
+                            <p>status: <span id="reply_messages_status"></span></p>
+                            <p>samples status: <span id="reply_messages_empty_status"></span></p>
+                        </li>
+                        <li>
+                            <h3>Message_Attachments Table</h3>
+                            <p>status: <span id="message_attachments_status"></span></p>
+                            <p>samples status: <span id="message_attachments_empty_status"></span></p>
+                        </li>
+                        <li>
+                            <h3>Catcha_Images Table</h3>
+                            <p>status: <span id="catcha_images_status"></span></p>
+                            <p>samples status: <span id="catcha_images_empty_status"></span></p>
+                        </li>
+                    </ul>
+                    <hr />
+                    <a href="#" data-role="button" id="create_tables_table">Create Tables Table</a>
+                    <!-- for testing-->
+                  <!--  <a href="#" data-role="button" id="delete_tables_table">Delete Tables Table</a> -->
+                    <a href="#" data-role="button" id="create_tables">Create Tables</a>
+                    <a href="#" data-role="button" id="empty_tables">Empty Tables</a>
+                    <a href="#" data-role="button" id="delete_tables">Delete Tables</a>
+                    <a href="#" data-role="button" id="add_sample_app_text">Add Sample Data</a>
                 </div>
-            </div>
-            <div data-role="footer">
-
-             </div>
+            <div data-role="footer"> 2012 - 2013 Khulekani Ngongoma </div>
         </div>
-</body>
+    <script src="/socket.io/lib/socket.io.js"></script>
+    <script>
+        var socket = io.connect('/backend');
+    </script> 
+        <script src="static/js/backend/tables_manager.js"></script>
+    </body>
 </html>

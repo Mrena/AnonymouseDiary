@@ -142,19 +142,20 @@ function pageNotFound(request,response){
 // Listening to socket connection
    io.sockets.on("connection",function(client){
 		
-		
-		console.log("connected");
-		client.emit("hello");
-		
 		require(__dirname+"/js/authenticator").authenticate(client,mysql_con,fs);
 		require(__dirname + "/js/chat").chat(client, mysql_con, fs);
-
-		require("./js/startup_tables").startup_tables(client, mysql_con, fs);
-		require("./js/startup_samples").startup_samples(client, mysql_con, fs);
 		require("./js/catcha_server").catcha_server(client, mysql_con, fs);
 		
 		
-	});
+   });
+
+   io.of("/backend").on("connection", function(client) {       
+
+       require("./js/startup_tables").startup_tables(client, mysql_con, fs);
+       require("./js/startup_samples").startup_samples(client, mysql_con, fs);
+       require("./js/catcha_server").catcha_server(client, mysql_con, fs);
+
+   });
 	
 
 
