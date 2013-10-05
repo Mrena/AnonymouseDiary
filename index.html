@@ -6,10 +6,34 @@
     <link rel="stylesheet" href="static/css/mainstyle.css" />
     <script type="text/javascript" src="static/js/jquery-1.10.2.js"></script>
     <script type="text/javascript" src="static/js/jquery.mobile-1.3.2.js"></script>
-	<!-- <script src="node_modules/socket.io/lib/socket.io.js"></script> -->
   </head>
   <body>
-
+      
+       <div data-role="page" id="challenge" data-theme="a">
+    <div data-role="header" data-position="fixed">
+        <ul data-role="listview" style="list-style:none;">
+          <li><img src="static/images/diary.png" alt="logo" />
+              <h3><span class="app_name"></span></h3>
+              <p>Express, anonymously.</p>
+          </li>
+        </ul>
+    </div>
+    	<div data-role="content">
+    		<ul data-role="listview" data-inset="true" data-theme="b">
+        		<li><h3>Home</h3></li>
+        	</ul>
+        	<br />
+    	    <p>Lets make sure you're human. Please enter the value of the image below.</p>
+            <p style="color:red; display: none " id="catcha_error">Incorrect catcha image value</p>
+            <img src="" id="catcha_image" alt="Catcha Image"/>
+        	<input type="text" id="catcha_value" />
+           <a href="#" data-role="button" data-theme="c" id="submit_catcha">Enter</a>
+    	</div>
+    <div data-role="footer" data-position="fixed">
+       2013 - Khulekani Ngongoma
+  </div>
+  </div>
+      
       <!-- Start of index page -->
   <div data-role="page" id="index" data-theme="a">
     <div data-role="header" data-position="fixed">
@@ -140,7 +164,6 @@
   </div>
       <!-- End of random page -->
 
-
       <!-- Start of chat page -->
    <div data-role="page" id="chat" data-theme="a">
     <div data-role="header" data-position="fixed">
@@ -210,13 +233,41 @@
     </div>
   </div>
   </div>
-    <!--[if IE]><script type="text/javascript" src="static/js/excanvas.js"></script><![endif]-->
     <script src="static/js/logic.js"></script>
     <script src="/socket.io/lib/socket.io.js"></script>
     <script type="text/javascript">
     	 // Connecting this client to the server over web sockets.
     	 var socket = io.connect();
-    	 
+
+    	 var objCatcha;
+    	 socket.emit("generate_new_catcha").on("new_catcha_image", function (catchaImage) {
+    	  
+    	     $("#catcha_image").attr("src", catchaImage.catcha_image);
+    	     objCatcha = catchaImage;
+
+    	 });
+
+    	 $("#submit_catcha").on("vclick", function (e) {
+
+    	     if ($("#catcha_value").val() === objCatcha.catcha_value) {
+
+    	         $.mobile.changePage("#index");
+
+    	     }else {
+
+    	         $("#catcha_error").fadeIn(function () {
+    	             setTimeout(function () {
+    	                 $("#catcha_error").fadeOut();
+    	                 $("#catcha_value").val("");
+    	                 socket.emit("generate_new_catcha");
+    	             }, 3000);
+    	             
+    	         });
+
+    	     }
+
+    	     e.preventDefault();
+    	 });
 	</script>
       <script src="static/js/chat_logic.js"></script>
       <script src="static/js/random_logic.js"></script>

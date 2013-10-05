@@ -156,7 +156,7 @@ var generateNewCatcha = function(client,mysql_con,fs){
 		
     	var rows_number = rows[0]["COUNT(*)"];
     	var random_row = Math.floor(Math.random()*rows_number);
-    	if(random_row==0)
+    	if(random_row === 0)
     		random_row = 1;
  
     	var query = "SELECT * FROM Catcha_Images WHERE catcha_id='"+random_row+"'";
@@ -166,14 +166,17 @@ var generateNewCatcha = function(client,mysql_con,fs){
     		console.trace(error);
     		
     		
-    	},function(client,rows,fields){
-    		var objCatcha = {
-    				"catcha_name"  : rows[0].catcha_name,
-    				"catcha_value" : rows[0].catcha_value,
-    				"catcha_image" : rows[0].catcha_image
-    		};
-    	
-        	client.emit("new_catcha_image",JSON.stringify(objCatcha));
+    	}, function (client, rows, fields) {
+
+    	    if (rows && rows[0]) {
+    	        var objCatcha = {
+    	            "catcha_name": rows[0].catcha_name,
+    	            "catcha_value": rows[0].catcha_value,
+    	            "catcha_image": rows[0].catcha_image
+    	        };
+
+    	        client.emit("new_catcha_image", objCatcha);
+    	    }
     	});
     	
 	});

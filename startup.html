@@ -8,14 +8,14 @@
     </head>
     <body>
         <div data-role="page" id="index">
-            <div data-role="header">
-                <ul data-role="listview" style="list-style:none;">
-                          <li><img src="static/images/diary.png" alt="logo" />
-                              <h3><span class="app_name"></span></h3>
-                              <p>Express, anonymously.</p>
-                          </li>
-                      </ul>
-            </div>
+            <div data-role="header" data-position="fixed">
+             <ul data-role="listview" style="list-style:none;">
+                <li><img src="static/images/diary.png" alt="logo" />
+                    <h3><span class="app_name"></span></h3>
+                        <p>Express, anonymously.</p>
+                </li>
+            </ul>
+        </div>
                 <div data-role="content">
                     <ul data-role="listview">
                         <li>
@@ -58,12 +58,160 @@
                     <a href="#" data-role="button" id="delete_tables">Delete Tables</a>
                     <a href="#" data-role="button" id="add_sample_app_text">Add Sample Data</a>
                 </div>
-            <div data-role="footer"> 2012 - 2013 Khulekani Ngongoma </div>
+            <div data-role="footer" data-position="fixed"> 
+                <div data-role="navbar">
+                    <ul>
+                        <li><a href="#index" data-icon="ic_view_grid" data-iconpos="top">Home</a></li>
+                        <li><a href="#catcha_manager" data-icon="ic_email" data-iconpos="top">Catcha Manager</a></li>
+                    </ul>
+               </div>
+            </div>
+        </div>
+
+        <div data-role="page" id="catcha_manager">
+              <div data-role="header" data-position="fixed">
+                <ul data-role="listview" style="list-style:none;">
+                    <li><img src="static/images/diary.png" alt="logo" />
+                        <h3><span class="app_name"></span></h3>
+                        <p>Express, anonymously.</p>
+                    </li>
+                </ul>
+            </div>
+            <div data-role="content">
+                <h2>Catcha Manager</h2>
+                <div class="ui-grid-a">
+                    <div class="ui-block-a"><a href="#" data-role="button" class="get_all_catcha_images">All Catcha Images</a></div>
+                    <div class="ui-block-b"><a href="#add_catcha" data-role="button">Add Catcha Image</a></div>
+                </div>
+               <div id="catcha_manager_content"></div>
+            </div>
+            <div data-role="footer" data-position="fixed">
+                <div data-role="navbar">
+                <ul>
+                    <li><a href="#index" data-icon="ic_view_grid" data-iconpos="top" id="index">Home</a></li>
+                    <li><a href="#catcha_manager" data-icon="ic_email" data-iconpos="top">Catcha Manager</a></li>
+                </ul>
+               </div>
+            </div>
+        </div>
+
+
+         <div data-role="page" id="all_catchas">
+             <div data-role="header">
+                <ul data-role="listview" style="list-style:none;">
+                          <li><img src="static/images/diary.png" alt="logo" />
+                              <h3><span class="app_name"></span></h3>
+                              <p>Express, anonymously.</p>
+                          </li>
+                      </ul>
+            </div>
+            <div data-role="content">
+                <h2>Catcha Manager</h2>
+                <div class="ui-grid-a">
+                    <div class="ui-block-a"><a href="#" data-role="button" class="get_all_catcha_images">All Catcha Images</a></div>
+                    <div class="ui-block-b"><a href="#add_catcha" data-role="button">Add Catcha Image</a></div>
+                </div>
+                <h3 style="text-align:left">All Catcha Images</h3>
+               
+                        <div id="all_catcha_images">
+                            <div class="ui-grid-d" id="catcha_image_viewer" style="background:rgba(96,7,3,0.3)">
+                                <div class="ui-block-a"><h4>Catcha Id</h4></div>
+                                <div class="ui-block-b"><h4>Name</h4></div>
+                                <div class="ui-block-c"><h4>Value</h4></div>
+                                <div class="ui-block-d"><h4>Image</h4></div>
+                                <div class="ui-block-c"><h4>Operations</h4></div>
+                            </div>
+                        </div>
+                <hr />
+                <div id="catcha_editor">
+
+                </div>
+                    
+                    
+               <div class="ui-block-c" id="collection_op">
+                        
+                    </div>
+            </div>
+            <div data-role="footer" data-position="fixed">
+                <div data-role="navbar">
+                <ul>
+                    <li><a href="#index" data-icon="ic_view_grid" data-iconpos="top" id="index">Home</a></li>
+                    <li><a href="#catcha_manager" data-icon="ic_email" data-iconpos="top">Catcha Manager</a></li>
+                </ul>
+               </div>
+            </div>
+        </div>
+
+
+         <div data-role="page" id="add_catcha">
+             <div data-role="header">
+                <ul data-role="listview" style="list-style:none;">
+                          <li><img src="static/images/diary.png" alt="logo" />
+                              <h3><span class="app_name"></span></h3>
+                              <p>Express, anonymously.</p>
+                          </li>
+                      </ul>
+            </div>
+            <div data-role="content">
+                <h2>Catcha Manager</h2>
+                <div class="ui-grid-a">
+                    <div class="ui-block-a"><a href="#" data-role="button" class="get_all_catcha_images">All Catcha Images</a></div>
+                    <div class="ui-block-b"><a href="#add_catcha" data-role="button" id="add_catcha_image">Add Catcha Image</a></div>
+                </div>
+                <h3 style="text-align:left">Add Catcha Image</h3>
+                <div id="add_notification" class="ui-state-highlight"></div>
+                <div id="current_catcha">
+
+                </div>
+                <div id="catcha_dropzone" style="background:rgba(96,7,3,0.3)">You can drop catcha image(s) over here</div>
+            <table>
+	            <tr>
+		         <td>
+		            <label for="catcha_image" class="ui-hidden-accessible">Image:</label>
+		            <input type="file" id="catcha_image" placeholder="Catcha Image" class="ui-body-d ui-shadow-inset" />
+                    <span class="error" id="catcha_image_error"></span>
+		        </td>
+	        </tr>
+	        <tr>
+		        <td>
+		        <label for="catcha_name" class="ui-hidden-accessible">Name:</label>
+		        <input type="text" id="catcha_name" placeholder="Catcha Name" class="ui-input-text ui-body-d ui-shadow-inset" />
+                <span class="error" id="catcha_name_error"></span>
+		        </td>
+	       </tr>
+	       <tr>
+		       <td>
+		        <label for="l_name" class="ui-hidden-accessible">Catcha Value:</label>
+		        <input type="text" id="catcha_value" placeholder="Catcha Value" class="ui-input-text ui-body-d ui-shadow-inset" />
+                <span class="error" id="catcha_value_error"></span>
+		       </td>
+	       </tr>
+	</table>
+
+	<a href="#" data-role="button" id="submit_catcha_image">Add</a>
+	<br />
+            </div>
+            <div data-role="footer" data-position="fixed">
+                <div data-role="navbar">
+                <ul>
+                    <li><a href="#index" data-icon="ic_view_grid" data-iconpos="top" id="index">Home</a></li>
+                    <li><a href="#catcha_manager" data-icon="ic_email" data-iconpos="top">Catcha Manager</a></li>
+                </ul>
+               </div>
+            </div>
         </div>
     <script src="/socket.io/lib/socket.io.js"></script>
     <script>
         var socket = io.connect('/backend');
     </script> 
+        <script src="static/js/util.js"></script>
         <script src="static/js/backend/tables_manager.js"></script>
+        <script src="static/js/backend/client_add_catcha.js"></script>
+        <script src="static/js/backend/client_all_catcha.js"></script>
+        <script src="static/js/logic.js"></script>
+        <script>
+            client_add_catcha(socket);
+            client_all_catcha(socket);
+        </script>
     </body>
 </html>

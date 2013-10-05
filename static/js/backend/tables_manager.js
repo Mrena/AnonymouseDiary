@@ -168,7 +168,6 @@
             parseInt(tableInfo.created) ? $("#" + tableInfo.name + "_status").text("Created") : $("#" + tableInfo.name + "_status").text("Not Created");
             parseInt(tableInfo.samples_added) ? $("#" + tableInfo.name + "_empty_status").text("Added") : $("#" + tableInfo.name + "_empty_status").text("Not Added");
 
-            console.log(tableInfo);
         });
 
     });
