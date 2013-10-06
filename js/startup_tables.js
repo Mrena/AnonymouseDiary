@@ -218,7 +218,7 @@ var startup_tables = function(client,mysql_con,fs){
 	}).on("create_tables_table", function () {
 
 	    try {
-	        console.log("about to create tables table");
+	     
 	        startup_da_tables.createTablesTable(client, mysql_con, fs);
 
 	    } catch (error) {

@@ -55,8 +55,8 @@
                   <!--  <a href="#" data-role="button" id="delete_tables_table">Delete Tables Table</a> -->
                     <a href="#" data-role="button" id="create_tables">Create Tables</a>
                     <a href="#" data-role="button" id="empty_tables">Empty Tables</a>
-                    <a href="#" data-role="button" id="delete_tables">Delete Tables</a>
-                    <a href="#" data-role="button" id="add_sample_app_text">Add Sample Data</a>
+                    <a href="#" data-role="button" id="delete_tables" style="display: none">Delete Tables</a>
+                    <a href="#" data-role="button" id="add_sample_data" style="display: none">Add Sample Data</a>
                 </div>
             <div data-role="footer" data-position="fixed"> 
                 <div data-role="navbar">
@@ -209,6 +209,7 @@
         <script src="static/js/backend/client_add_catcha.js"></script>
         <script src="static/js/backend/client_all_catcha.js"></script>
         <script src="static/js/logic.js"></script>
+        <script src="static/js/backend/client_sample_logic.js"></script>
         <script>
             client_add_catcha(socket);
             client_all_catcha(socket);

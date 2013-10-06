@@ -11,6 +11,7 @@
 				
 			},function(client){
 				client.emit("catcha_image_added");
+			    
 		 });
 			
 	};

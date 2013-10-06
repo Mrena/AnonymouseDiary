@@ -57,7 +57,6 @@ var createArticleTable = function (client, mysql_con, fs) {
 };
 
 
-
 var createReplyMessagesTable = function (client, mysql_con, fs) {
 
     query = "CREATE TABLE IF NOT EXISTS Reply_Messages(reply_id INTEGER PRIMARY KEY NOT NULL AUTO_INCREMENT,reply_to INTEGER NOT NULL REFERENCES Messages(message_id),reply_number INTEGER NOT NULL,message VARCHAR(5000) NOT NULL,likes INTEGER,dislikes INTEGER)";
@@ -143,6 +142,7 @@ var createReplyMessagesTable = function (client, mysql_con, fs) {
 	        },function(client){
 		
 	            setTableCreateStatus(client, mysql_con, "messages", 0);
+	            setTableSamplesStatus(client, mysql_con, "messages", 0);
 		        client.emit("messages_table_deleted");
 			
 	        });
@@ -162,6 +162,7 @@ var createReplyMessagesTable = function (client, mysql_con, fs) {
             }, function (client) {
 
                 setTableCreateStatus(client, mysql_con, "category", 0);
+                setTableSamplesStatus(client, mysql_con, "category", 0);
                 client.emit("category_table_deleted");
 
             });
@@ -181,6 +182,7 @@ var createReplyMessagesTable = function (client, mysql_con, fs) {
             }, function (client) {
 
                 setTableCreateStatus(client, mysql_con, "article", 0);
+                setTableSamplesStatus(client, mysql_con, "article", 0);
                 client.emit("article_table_deleted");
 
             });
@@ -202,6 +204,7 @@ var deleteReplyMessagesTable = function(client,mysql_con,fs){
 	},function(client){
 		
 	    setTableCreateStatus(client, mysql_con, "reply_messages", 0);
+	    setTableSamplesStatus(client, mysql_con, "reply_messages", 0);
 		client.emit("reply_messages_table_deleted");
 			
 		
@@ -222,6 +225,7 @@ var deleteMessageAttachmentsTable = function(client,mysql_con,fs){
 	},function(client){
 		
 	    setTableCreateStatus(client, mysql_con, "message_attachments", 0);
+	    setTableSamplesStatus(client, mysql_con, "message_attachments", 0);
 		client.emit("message_attachments_table_deleted");
 			
 	});
@@ -240,6 +244,7 @@ var deleteCatchaImagesTable = function(client,mysql_con,fs){
 	},function(client){
 		
 	    setTableCreateStatus(client, mysql_con, "catcha_images", 0);
+	    setTableSamplesStatus(client, mysql_con, "catcha_images", 0);
 		client.emit("catcha_images_table_deleted");
 		
 	});
@@ -440,14 +445,15 @@ var createTablesTable = function (client, mysql_con, fs) {
             }, function (client) {
 
                 ++added_tables;
+               if (added_tables == tables_length) {
+                client.emit("tables_table_created");
+                }
 
             });
-
+            
         });
 
-        if (added_tables == tables_length) {
-            client.emit("tables_table_created");
-        }
+       
 
     });
 
