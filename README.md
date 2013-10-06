@@ -8,7 +8,9 @@ The app will let it users pour their heart out and speak their minds about situa
  - On your MySQL server create a database named anonymouse.
  - Using your command line tool, navigate to the folder of the app.
  - Once you have navigated to the folder of the app, using the command line tool type in "node server". It should write "info - socket.io started - Server listening on 8000 127.0.0.1".
- - To run it, on your broswer address bar type in "localhost:8000".
+ - To run the admin side of the app type in "localhost:8000/startup", and then create database tables, starting with the one which keeps track of the other tables' state. It is name "Tables".
+ - After you have created all of the required tables click the Catcha Manager button, click the Add Catcha button, and drop all of the catcha images from follwing folder: [project root]/static/catcha_images, or add them individually using the drag and drop feature or using the form.
+ - To run the user's side of the app, on your broswer address bar type in "localhost:8000".
  - On a separate broswer window or tab type in "localhost:8000" to have another client connect to the server so you can test things like chat, and to see that the app truly real-time.
  
 <b>Contribution Instructions</b>
@@ -16,3 +18,5 @@ The app will let it users pour their heart out and speak their minds about situa
  - On Github while logged in into your Github account, you need to navigate to where this project is, and fork it.
  - Once a branch of this project has been created on your GitHub account, you can clone it, do your changes, and then push those changes to your branch.
  - After you have done with your changes, and you feel that you branch is ready to be merged with the main/master branch, you can send a pull request.
+
+ - Check the TODO file to see what needs to be done.

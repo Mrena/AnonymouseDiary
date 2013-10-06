@@ -1,1 +1,9 @@
-Since this is a tiny app, we are just going to work with TODO list, no methodologies.
+Since this is a tiny app, we are just going to work with a TODO list, no methodologies. If this starts to have more than one contributor, a contributor should use the project's issues page to say what they are currently working on, and what is the estimated completion time.
+
+- A user should be able to create a an article category from the drop-down on the Articles page. After the category is created, a minimum of 5 users should vote for it to be live before it can be visible on other users, and be allowed to post an article on the category. If a category gets 5 negative votes, it is considered as being declined by the user community.
+-- On the articles page there should be a small section where categories appending to be approved or declined are shown.
+-- A category which has been declined should wait 3 days before it can be suggested again, by any user.
+-- A user should only vote once for each category suggested.
+-- A maximum of 10 suggestions should be visible on the suggested category panel.
+-- If a user tries to suggest a category but has already been suggested they should be asked if they would like to give it a position vote. This should happen even if the suggested category is not visible on the suggested category panel.
+- On the home page a user should be able to drop a picture which will display on the home page with the text that is already there. This is for customization, it will not display as a profile picture.
