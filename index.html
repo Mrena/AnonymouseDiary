@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+!DOCTYPE html>
 <html>
   <head>
     <title class="app_name"></title>
@@ -42,6 +42,7 @@
               <h3><span class="app_name"></span></h3>
               <p>Express, anonymously.</p>
           </li>
+            <li id="home_notification" class="notification"></li>
         </ul>
     </div>
     	<div data-role="content">
@@ -49,8 +50,15 @@
         		<li><h3>Home</h3></li>
         	</ul>
         	<br />
-    	<p style="font-size : 30px"><strong class="app_name_big app_name"></strong> lets you pour your heart and speak your mind about situations or stuff that is happening in your live, using a username of "Anonymous". You will get to vote for the best post of the week, and dislike posts which you feel are not desirable. When a post gets five dislike it gets removed from the app.</p></li>
-        	
+            <div class="ui-grid-a">
+                <div class="ui-block-a">
+                    <div id="add_notification"></div>
+                    <div id="customization_image">Drop a customization photo here.</div>
+                </div>
+                <div class="ui-block-b">
+    	            <p style="font-size : 30px"><strong class="app_name_big app_name"></strong> lets you pour your heart and speak your mind about situations or stuff that is happening in your live, using a username of "Anonymous". You will get to vote for the best post of the week, and dislike posts which you feel are not desirable. When a post gets five dislike it gets removed from the app.</p></li>
+        	  </div>
+                </div>
             <div class="ui-grid-b">
                 <div class="ui-block-a"></div>
                 <div class="ui-block-b">
@@ -106,6 +114,15 @@
                         <a href="#" data-role="button" id="clear_article">Clear</a>
                  </div>
             </div><!-- /grid-a -->
+            <br />
+            <div class="ui-grid-a">
+                <div class="ui-block-a"></div>
+                <div class="ui-block-b">
+                    <div data-role="listview" data-theme="c" data-inset="true" id="suggested_article_category">
+                        <li data-theme="b" data-inset="true"><h3>Suggested Article Category</h3></li>
+                    </div>
+                </div>
+            </div>
     	</div>
     <div data-role="footer" data-position="fixed">
     <div data-role="navbar">

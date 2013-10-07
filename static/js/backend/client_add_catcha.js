@@ -171,7 +171,7 @@ var client_add_catcha = function(socket) {
 		$(this).removeClass("valid_drop_area");
 		
 		
-	if(e.dataTransfer.files.length==1){
+	if(e.dataTransfer.files.length===1){
 		var file = e.dataTransfer.files[0];
 		
 	$("#catcha_image").attr("disabled","disabled");
